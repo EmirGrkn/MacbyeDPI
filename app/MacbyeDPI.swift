@@ -33,7 +33,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
         // Status line (non-clickable)
         let statusLine = isActive
-            ? "● Active  —  Discord connected"
+            ? "● Active"
             : "○ Inactive"
         let infoItem = NSMenuItem(title: statusLine, action: nil, keyEquivalent: "")
         infoItem.isEnabled = false
@@ -43,7 +43,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
         // Toggle action
         menu.addItem(NSMenuItem(
-            title: isActive ? "Turn Off" : "Turn On for Discord",
+            title: isActive ? "Turn Off" : "Turn On",
             action: #selector(toggleDNS),
             keyEquivalent: ""
         ))

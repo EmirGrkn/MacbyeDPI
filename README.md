@@ -30,7 +30,7 @@ sudo bash install_app.sh
 open /Applications/MacbyeDPI.app
 ```
 
-The Discord icon appears in your menu bar. Click **Turn On for Discord** to activate.
+The Discord icon appears in your menu bar. Click **Turn On** to activate.
 
 Default upstream: **Yandex DNS `77.88.8.8:1253`** — same non-standard port as GoodbyeDPI's recommended `2_any_country_dnsredir.cmd` script.
 
