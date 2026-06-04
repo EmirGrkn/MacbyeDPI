@@ -53,15 +53,11 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
         statusItem.menu = menu
 
-        // Icon: custom Discord PNG (on = filled, off = outline)
         if let btn = statusItem.button {
-            let name = isActive ? "filled_black_transparent" : "outline_black_transparent"
-            if let url = Bundle.main.url(forResource: name, withExtension: "png"),
-               let img = NSImage(contentsOf: url) {
-                img.size = NSSize(width: 18, height: 18)
-                img.isTemplate = true   // adapts to light/dark menu bar
-                btn.image = img
-            }
+            let symbolName = isActive ? "shield.fill" : "shield"
+            let img = NSImage(systemSymbolName: symbolName, accessibilityDescription: nil)
+            img?.isTemplate = true
+            btn.image = img
         }
     }
 
