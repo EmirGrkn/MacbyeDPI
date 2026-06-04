@@ -23,19 +23,22 @@ swiftc -framework Cocoa \
 
 echo "[2/2] Assembling .app bundle..."
 
-# Generate .icns from filled.png
+# Generate .icns from SF Symbol (shield.fill)
 ICONSET="${DIR}/MacbyeDPI.iconset"
+ICON_SRC="${DIR}/app/shield_source.png"
+swift "${DIR}/gen_icon.swift" "${ICON_SRC}"
 rm -rf "${ICONSET}"
 mkdir "${ICONSET}"
 for size in 16 32 128 256 512; do
-    sips -z ${size} ${size} "${DIR}/filled.png" \
+    sips -z ${size} ${size} "${ICON_SRC}" \
          --out "${ICONSET}/icon_${size}x${size}.png"      >/dev/null
     double=$((size * 2))
-    sips -z ${double} ${double} "${DIR}/filled.png" \
+    sips -z ${double} ${double} "${ICON_SRC}" \
          --out "${ICONSET}/icon_${size}x${size}@2x.png"   >/dev/null
 done
 iconutil -c icns "${ICONSET}" -o "${DIR}/app/MacbyeDPI.icns"
 rm -rf "${ICONSET}"
+rm -f "${ICON_SRC}"
 
 rm -rf "${APP}"
 mkdir -p "${APP}/Contents/MacOS"
