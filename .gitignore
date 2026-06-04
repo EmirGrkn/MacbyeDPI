@@ -3,3 +3,4 @@ app/MacbyeDPI_bin
 app/MacbyeDPI.icns
 MacbyeDPI.app/
 .DS_Store
+.claude/
