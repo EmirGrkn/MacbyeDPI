@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.macbyedpi.dnsredir</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/usr/local/bin/macbyedpi_dnsredir</string>
+        <string>--dns-addr</string>
+        <string>77.88.8.8</string>
+        <string>--dns-port</string>
+        <string>1253</string>
+    </array>
+
+    <key>RunAtLoad</key>
+    <false/>
+
+    <key>KeepAlive</key>
+    <false/>
+
+    <key>StandardOutPath</key>
+    <string>/var/log/macbyedpi_dnsredir.log</string>
+
+    <key>StandardErrorPath</key>
+    <string>/var/log/macbyedpi_dnsredir_err.log</string>
+</dict>
+</plist>
