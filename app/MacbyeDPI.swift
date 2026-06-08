@@ -31,6 +31,12 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     private func rebuildMenu() {
         let menu = NSMenu()
 
+        let titleItem = NSMenuItem(title: "MacbyeDPI", action: nil, keyEquivalent: "")
+        titleItem.isEnabled = false
+        menu.addItem(titleItem)
+
+        menu.addItem(.separator())
+
         // Status line (non-clickable)
         let statusLine = isActive
             ? "● Active"
